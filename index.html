@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Group 5 Currency Converter</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<link rel="stylesheet" href="css/signin.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        function preloadImage(url) {
+            var img = new Image();
+            img.src = "/images/loading.gif";
+        }
+    </script>
+  </head>
+  <body>
+	<form class="form-signin" action="converter.pl" method="POST" id="currencyForm">
+	<div id="results"></div><br>
+	<h2 class="form-signin-heading">Currency Converter</h2>
+	 <input type="number" step="any" class="form-control" name="monetaryAmount" placeholder="Enter value" required autofocus>
+    <select class="selectpicker" name="fromCurrency" data-live-search="true" title="From" required>
+	    <option data-content="<img src='flags/Afghanistan.png'> Afghanistan Afghani" value="AFA"></option>
+<option data-content="<img src='flags/Albania.png'> Albanian Lek" value="ALL"></option>
+<option data-content="<img src='flags/Algeria.png'> Algerian Dinar" value="DZD"></option>
+<option data-content="<img src='flags/Argentina.png'> Argentine Peso" value="ARS"></option>
+<option data-content="<img src='flags/Aruba.png'> Aruba Florin" value="AWG"></option>
+<option data-content="<img src='flags/Australia.png'> Australian Dollar" value="AUD"></option>
+<option data-content="<img src='flags/Bahamas.png'> Bahamian Dollar" value="BSD"></option>
+<option data-content="<img src='flags/Bahrain.png'> Bahraini Dinar" value="BHD"></option>
+<option data-content="<img src='flags/Bangladesh.png'> Bangladesh Taka" value="BDT"></option>
+<option data-content="<img src='flags/Barbados.png'> Barbados Dollar" value="BBD"></option>
+<option data-content="<img src='flags/Belize.png'> Belize Dollar" value="BZD"></option>
+<option data-content="<img src='flags/Bermuda.png'> Bermuda Dollar" value="BMD"></option>
+<option data-content="<img src='flags/Bhutan.png'> Bhutan Ngultrum" value="BTN"></option>
+<option data-content="<img src='flags/Bolivia.png'> Bolivian Boliviano" value="BOB"></option>
+<option data-content="<img src='flags/Botswana.png'> Botswana Pula" value="BWP"></option>
+<option data-content="<img src='flags/Brazil.png'> Brazilian Real" value="BRL"></option>
+<option data-content="<img src='flags/United_Kingdom.png'> British Pound" value="GBP"></option>
+<option data-content="<img src='flags/Brunei.png'> Brunei Dollar" value="BND"></option>
+<option data-content="<img src='flags/Burundi.png'> Burundi Franc" value="BIF"></option>
+<option data-content="<img src='flags/'>CFA Franc (BCEAO)" value="XOF"></option>
+<option data-content="<img src='flags/'>CFA Franc (BEAC)" value="XAF"></option>
+<option data-content="<img src='flags/Cambodia.png'> Cambodia Riel" value="KHR"></option>
+<option data-content="<img src='flags/Canada.png'> Canadian Dollar" value="CAD"></option>
+<option data-content="<img src='flags/Cape_Verde.png'> Cape Verde Escudo" value="CVE"></option>
+<option data-content="<img src='flags/Cayman_Islands.png'> Cayman Islands Dollar" value="KYD"></option>
+<option data-content="<img src='flags/Chile.png'> Chilean Peso" value="CLP"></option>
+<option data-content="<img src='flags/China.png'> Chinese Yuan" value="CNY"></option>
+<option data-content="<img src='flags/Colombia.png'> Colombian Peso" value="COP"></option>
+<option data-content="<img src='flags/Comoros.png'> Comoros Franc" value="KMF"></option>
+<option data-content="<img src='flags/Costa_Rica.png'> Costa Rica Colon" value="CRC"></option>
+<option data-content="<img src='flags/Croatia.png'> Croatian Kuna" value="HRK"></option>
+<option data-content="<img src='flags/Cuba.png'> Cuban Peso" value="CUP"></option>
+<option data-content="<img src='flags/Cyprus.png'> Cyprus Pound" value="CYP"></option>
+<option data-content="<img src='flags/Czech_Republic.png'> Czech Koruna" value="CZK"></option>
+<option data-content="<img src='flags/Denmark.png'> Danish Krone" value="DKK"></option>
+<option data-content="<img src='flags/Djibouti.png'> Dijibouti Franc" value="DJF"></option>
+<option data-content="<img src='flags/Dominican_Republic.png'> Dominican Peso" value="DOP"></option>
+<option data-content="<img src='flags/'>East Caribbean Dollar" value="XCD"></option>
+<option data-content="<img src='flags/Egypt.png'> Egyptian Pound" value="EGP"></option>
+<option data-content="<img src='flags/El_Salvador.png'> El Salvador Colon" value="SVC"></option>
+<option data-content="<img src='flags/Estonia.png'> Estonian Kroon" value="EEK"></option>
+<option data-content="<img src='flags/Ethiopia.png'> Ethiopian Birr" value="ETB"></option>
+<option data-content="<img src='flags/'>Euro" value="EUR"></option>
+<option data-content="<img src='flags/Falkland_Islands.png'> Falkland Islands Pound" value="FKP"></option>
+<option data-content="<img src='flags/Gambia.png'> Gambian Dalasi" value="GMD"></option>
+<option data-content="<img src='flags/Ghana.png'> Ghanian Cedi" value="GHC"></option>
+<option data-content="<img src='flags/Gibraltar.png'> Gibraltar Pound" value="GIP"></option>
+<option data-content="<img src='flags/'>Gold Ounces" value="XAU"></option>
+<option data-content="<img src='flags/Guatemala.png'> Guatemala Quetzal" value="GTQ"></option>
+<option data-content="<img src='flags/Guinea.png'> Guinea Franc" value="GNF"></option>
+<option data-content="<img src='flags/Guyana.png'> Guyana Dollar" value="GYD"></option>
+<option data-content="<img src='flags/Haiti.png'> Haiti Gourde" value="HTG"></option>
+<option data-content="<img src='flags/Honduras.png'> Honduras Lempira" value="HNL"></option>
+<option data-content="<img src='flags/Hong_Kong.png'> Hong Kong Dollar" value="HKD"></option>
+<option data-content="<img src='flags/Hungary.png'> Hungarian Forint" value="HUF"></option>
+<option data-content="<img src='flags/Iceland.png'> Iceland Krona" value="ISK"></option>
+<option data-content="<img src='flags/India.png'> Indian Rupee" value="INR"></option>
+<option data-content="<img src='flags/Indonesia.png'> Indonesian Rupiah" value="IDR"></option>
+<option data-content="<img src='flags/Iraq.png'> Iraqi Dinar" value="IQD"></option>
+<option data-content="<img src='flags/Israel.png'> Israeli Shekel" value="ILS"></option>
+<option data-content="<img src='flags/Jamaica.png'> Jamaican Dollar" value="JMD"></option>
+<option data-content="<img src='flags/Japan.png'> Japanese Yen" value="JPY"></option>
+<option data-content="<img src='flags/Jordan.png'> Jordanian Dinar" value="JOD"></option>
+<option data-content="<img src='flags/Kazakhstan.png'> Kazakhstan Tenge" value="KZT"></option>
+<option data-content="<img src='flags/Kenya.png'> Kenyan Shilling" value="KES"></option>
+<option data-content="<img src='flags/South_Korea.png'> Korean Won" value="KRW"></option>
+<option data-content="<img src='flags/Kuwait.png'> Kuwaiti Dinar" value="KWD"></option>
+<option data-content="<img src='flags/Laos.png'> Lao Kip" value="LAK"></option>
+<option data-content="<img src='flags/Latvia.png'> Latvian Lat" value="LVL"></option>
+<option data-content="<img src='flags/Lebanon.png'> Lebanese Pound" value="LBP"></option>
+<option data-content="<img src='flags/Lesotho.png'> Lesotho Loti" value="LSL"></option>
+<option data-content="<img src='flags/Liberia.png'> Liberian Dollar" value="LRD"></option>
+<option data-content="<img src='flags/Libya.png'> Libyan Dinar" value="LYD"></option>
+<option data-content="<img src='flags/Lithuania.png'> Lithuanian Lita" value="LTL"></option>
+<option data-content="<img src='flags/Macao.png'> Macau Pataca" value="MOP"></option>
+<option data-content="<img src='flags/Macedonia.png'> Macedonian Denar" value="MKD"></option>
+<option data-content="<img src='flags/Madagascar.png'> Malagasy Franc" value="MGF"></option>
+<option data-content="<img src='flags/Malawi.png'> Malawi Kwacha" value="MWK"></option>
+<option data-content="<img src='flags/Malaysia.png'> Malaysian Ringgit" value="MYR"></option>
+<option data-content="<img src='flags/Maldives.png'> Maldives Rufiyaa" value="MVR"></option>
+<option data-content="<img src='flags/Malta.png'> Maltese Lira" value="MTL"></option>
+<option data-content="<img src='flags/Mauritania.png'> Mauritania Ougulya" value="MRO"></option>
+<option data-content="<img src='flags/Mauritius.png'> Mauritius Rupee" value="MUR"></option>
+<option data-content="<img src='flags/Mexico.png'> Mexican Peso" value="MXN"></option>
+<option data-content="<img src='flags/Moldova.png'> Moldovan Leu" value="MDL"></option>
+<option data-content="<img src='flags/Mongolia.png'> Mongolian Tugrik" value="MNT"></option>
+<option data-content="<img src='flags/Morocco.png'> Moroccan Dirham" value="MAD"></option>
+<option data-content="<img src='flags/Mozambique.png'> Mozambique Metical" value="MZM"></option>
+<option data-content="<img src='flags/Myanmar.png'> Myanmar Kyat" value="MMK"></option>
+<option data-content="<img src='flags/Namibia.png'> Namibian Dollar" value="NAD"></option>
+<option data-content="<img src='flags/Nepal.png'> Nepalese Rupee" value="NPR"></option>
+<option data-content="<img src='flags/Netherlands_Antilles.png'> Neth Antilles Guilder" value="ANG"></option>
+<option data-content="<img src='flags/New_Zealand.png'> New Zealand Dollar" value="NZD"></option>
+<option data-content="<img src='flags/Nicaragua.png'> Nicaragua Cordoba" value="NIO"></option>
+<option data-content="<img src='flags/Nigeria.png'> Nigerian Naira" value="NGN"></option>
+<option data-content="<img src='flags/North_Korea.png'> North Korean Won" value="KPW"></option>
+<option data-content="<img src='flags/Norway.png'> Norwegian Krone" value="NOK"></option>
+<option data-content="<img src='flags/Oman.png'> Omani Rial" value="OMR"></option>
+<option data-content="<img src='flags/'>Pacific Franc" value="XPF"></option>
+<option data-content="<img src='flags/Pakistan.png'> Pakistani Rupee" value="PKR"></option>
+<option data-content="<img src='flags/'>Palladium Ounces" value="XPD"></option>
+<option data-content="<img src='flags/Panama.png'> Panama Balboa" value="PAB"></option>
+<option data-content="<img src='flags/Papua_New_Guinea.png'> Papua New Guinea Kina" value="PGK"></option>
+<option data-content="<img src='flags/Paraguay.png'> Paraguayan Guarani" value="PYG"></option>
+<option data-content="<img src='flags/Peru.png'> Peruvian Nuevo Sol" value="PEN"></option>
+<option data-content="<img src='flags/Philippines.png'> Philippine Peso" value="PHP"></option>
+<option data-content="<img src='flags/'>Platinum Ounces" value="XPT"></option>
+<option data-content="<img src='flags/Poland.png'> Polish Zloty" value="PLN"></option>
+<option data-content="<img src='flags/Qatar.png'> Qatar Rial" value="QAR"></option>
+<option data-content="<img src='flags/Romania.png'> Romanian Leu" value="ROL"></option>
+<option data-content="<img src='flags/Russian_Federation.png'> Russian Rouble" value="RUB"></option>
+<option data-content="<img src='flags/Samoa.png'> Samoa Tala" value="WST"></option>
+<option data-content="<img src='flags/Sao_Tome_and_Principe.png'> Sao Tome Dobra" value="STD"></option>
+<option data-content="<img src='flags/Saudi_Arabia.png'> Saudi Arabian Riyal" value="SAR"></option>
+<option data-content="<img src='flags/Seychelles.png'> Seychelles Rupee" value="SCR"></option>
+<option data-content="<img src='flags/Sierra_Leone.png'> Sierra Leone Leone" value="SLL"></option>
+<option data-content="<img src='flags/'>Silver Ounces" value="XAG"></option>
+<option data-content="<img src='flags/Singapore.png'> Singapore Dollar" value="SGD"></option>
+<option data-content="<img src='flags/Slovakia.png'> Slovak Koruna" value="SKK"></option>
+<option data-content="<img src='flags/Slovenia.png'> Slovenian Tolar" value="SIT"></option>
+<option data-content="<img src='flags/Soloman_Islands.png'> Solomon Islands Dollar" value="SBD"></option>
+<option data-content="<img src='flags/Somalia.png'> Somali Shilling" value="SOS"></option>
+<option data-content="<img src='flags/South_Africa.png'> South African Rand" value="ZAR"></option>
+<option data-content="<img src='flags/Sri_Lanka.png'> Sri Lanka Rupee" value="LKR"></option>
+<option data-content="<img src='flags/'>St Helena Pound" value="SHP"></option>
+<option data-content="<img src='flags/Sudan.png'> Sudanese Dinar" value="SDD"></option>
+<option data-content="<img src='flags/Suriname.png'> Surinam Guilder" value="SRG"></option>
+<option data-content="<img src='flags/Swaziland.png'> Swaziland Lilageni" value="SZL"></option>
+<option data-content="<img src='flags/Sweden.png'> Swedish Krona" value="SEK"></option>
+<option data-content="<img src='flags/Turkey.png'> Turkey Lira" value="TRY"></option>
+<option data-content="<img src='flags/Switzerland.png'> Swiss Franc" value="CHF"></option>
+<option data-content="<img src='flags/Syria.png'> Syrian Pound" value="SYP"></option>
+<option data-content="<img src='flags/Taiwan.png'> Taiwan Dollar" value="TWD"></option>
+<option data-content="<img src='flags/Tanzania.png'> Tanzanian Shilling" value="TZS"></option>
+<option data-content="<img src='flags/Thailand.png'> Thai Baht" value="THB"></option>
+<option data-content="<img src='flags/Tonga.png'> Tonga Pa'anga" value="TOP"></option>
+<option data-content="<img src='flags/Trinidad_and_Tobago.png'> Trinidad&amp;Tobago Dollar" value="TTD"></option>
+<option data-content="<img src='flags/Tunisia.png'> Tunisian Dinar" value="TND"></option>
+<option data-content="<img src='flags/Turkey.png'> Turkish Lira" value="TRL"></option>
+<option data-content="<img src='flags/United_States_of_America.png'> U.S. Dollar" value="USD"></option>
+<option data-content="<img src='flags/UAE.png'> UAE Dirham" value="AED"></option>
+<option data-content="<img src='flags/Uganda.png'> Ugandan Shilling" value="UGX"></option>
+<option data-content="<img src='flags/Ukraine.png'> Ukraine Hryvnia" value="UAH"></option>
+<option data-content="<img src='flags/Uruguay.png'> Uruguayan New Peso" value="UYU"></option>
+<option data-content="<img src='flags/Vanuatu.png'> Vanuatu Vatu" value="VUV"></option>
+<option data-content="<img src='flags/Venezuela.png'> Venezuelan Bolivar" value="VEB"></option>
+<option data-content="<img src='flags/Vietnam.png'> Vietnam Dong" value="VND"></option>
+<option data-content="<img src='flags/Yemen.png'> Yemen Riyal" value="YER"></option>
+<option data-content="<img src='flags/'>Yugoslav Dinar" value="YUM"></option>
+<option data-content="<img src='flags/Zambia.png'> Zambian Kwacha" value="ZMK"></option>
+<option data-content="<img src='flags/Zimbabwe.png'> Zimbabwe Dollar" value="ZWD"></option>
+
+    </select>
+
+	<select class="selectpicker" name="toCurrency" data-live-search="true" title="To" required>
+	    <option data-content="<img src='flags/Afghanistan.png'> Afghanistan Afghani" value="AFA"></option>
+<option data-content="<img src='flags/Albania.png'> Albanian Lek" value="ALL"></option>
+<option data-content="<img src='flags/Algeria.png'> Algerian Dinar" value="DZD"></option>
+<option data-content="<img src='flags/Argentina.png'> Argentine Peso" value="ARS"></option>
+<option data-content="<img src='flags/Aruba.png'> Aruba Florin" value="AWG"></option>
+<option data-content="<img src='flags/Australia.png'> Australian Dollar" value="AUD"></option>
+<option data-content="<img src='flags/Bahamas.png'> Bahamian Dollar" value="BSD"></option>
+<option data-content="<img src='flags/Bahrain.png'> Bahraini Dinar" value="BHD"></option>
+<option data-content="<img src='flags/Bangladesh.png'> Bangladesh Taka" value="BDT"></option>
+<option data-content="<img src='flags/Barbados.png'> Barbados Dollar" value="BBD"></option>
+<option data-content="<img src='flags/Belize.png'> Belize Dollar" value="BZD"></option>
+<option data-content="<img src='flags/Bermuda.png'> Bermuda Dollar" value="BMD"></option>
+<option data-content="<img src='flags/Bhutan.png'> Bhutan Ngultrum" value="BTN"></option>
+<option data-content="<img src='flags/Bolivia.png'> Bolivian Boliviano" value="BOB"></option>
+<option data-content="<img src='flags/Botswana.png'> Botswana Pula" value="BWP"></option>
+<option data-content="<img src='flags/Brazil.png'> Brazilian Real" value="BRL"></option>
+<option data-content="<img src='flags/United_Kingdom.png'> British Pound" value="GBP"></option>
+<option data-content="<img src='flags/Brunei.png'> Brunei Dollar" value="BND"></option>
+<option data-content="<img src='flags/Burundi.png'> Burundi Franc" value="BIF"></option>
+<option data-content="<img src='flags/'>CFA Franc (BCEAO)" value="XOF"></option>
+<option data-content="<img src='flags/'>CFA Franc (BEAC)" value="XAF"></option>
+<option data-content="<img src='flags/Cambodia.png'> Cambodia Riel" value="KHR"></option>
+<option data-content="<img src='flags/Canada.png'> Canadian Dollar" value="CAD"></option>
+<option data-content="<img src='flags/Cape_Verde.png'> Cape Verde Escudo" value="CVE"></option>
+<option data-content="<img src='flags/Cayman_Islands.png'> Cayman Islands Dollar" value="KYD"></option>
+<option data-content="<img src='flags/Chile.png'> Chilean Peso" value="CLP"></option>
+<option data-content="<img src='flags/China.png'> Chinese Yuan" value="CNY"></option>
+<option data-content="<img src='flags/Colombia.png'> Colombian Peso" value="COP"></option>
+<option data-content="<img src='flags/Comoros.png'> Comoros Franc" value="KMF"></option>
+<option data-content="<img src='flags/Costa_Rica.png'> Costa Rica Colon" value="CRC"></option>
+<option data-content="<img src='flags/Croatia.png'> Croatian Kuna" value="HRK"></option>
+<option data-content="<img src='flags/Cuba.png'> Cuban Peso" value="CUP"></option>
+<option data-content="<img src='flags/Cyprus.png'> Cyprus Pound" value="CYP"></option>
+<option data-content="<img src='flags/Czech_Republic.png'> Czech Koruna" value="CZK"></option>
+<option data-content="<img src='flags/Denmark.png'> Danish Krone" value="DKK"></option>
+<option data-content="<img src='flags/Djibouti.png'> Dijibouti Franc" value="DJF"></option>
+<option data-content="<img src='flags/Dominican_Republic.png'> Dominican Peso" value="DOP"></option>
+<option data-content="<img src='flags/'>East Caribbean Dollar" value="XCD"></option>
+<option data-content="<img src='flags/Egypt.png'> Egyptian Pound" value="EGP"></option>
+<option data-content="<img src='flags/El_Salvador.png'> El Salvador Colon" value="SVC"></option>
+<option data-content="<img src='flags/Estonia.png'> Estonian Kroon" value="EEK"></option>
+<option data-content="<img src='flags/Ethiopia.png'> Ethiopian Birr" value="ETB"></option>
+<option data-content="<img src='flags/'>Euro" value="EUR"></option>
+<option data-content="<img src='flags/Falkland_Islands.png'> Falkland Islands Pound" value="FKP"></option>
+<option data-content="<img src='flags/Gambia.png'> Gambian Dalasi" value="GMD"></option>
+<option data-content="<img src='flags/Ghana.png'> Ghanian Cedi" value="GHC"></option>
+<option data-content="<img src='flags/Gibraltar.png'> Gibraltar Pound" value="GIP"></option>
+<option data-content="<img src='flags/'>Gold Ounces" value="XAU"></option>
+<option data-content="<img src='flags/Guatemala.png'> Guatemala Quetzal" value="GTQ"></option>
+<option data-content="<img src='flags/Guinea.png'> Guinea Franc" value="GNF"></option>
+<option data-content="<img src='flags/Guyana.png'> Guyana Dollar" value="GYD"></option>
+<option data-content="<img src='flags/Haiti.png'> Haiti Gourde" value="HTG"></option>
+<option data-content="<img src='flags/Honduras.png'> Honduras Lempira" value="HNL"></option>
+<option data-content="<img src='flags/Hong_Kong.png'> Hong Kong Dollar" value="HKD"></option>
+<option data-content="<img src='flags/Hungary.png'> Hungarian Forint" value="HUF"></option>
+<option data-content="<img src='flags/Iceland.png'> Iceland Krona" value="ISK"></option>
+<option data-content="<img src='flags/India.png'> Indian Rupee" value="INR"></option>
+<option data-content="<img src='flags/Indonesia.png'> Indonesian Rupiah" value="IDR"></option>
+<option data-content="<img src='flags/Iraq.png'> Iraqi Dinar" value="IQD"></option>
+<option data-content="<img src='flags/Israel.png'> Israeli Shekel" value="ILS"></option>
+<option data-content="<img src='flags/Jamaica.png'> Jamaican Dollar" value="JMD"></option>
+<option data-content="<img src='flags/Japan.png'> Japanese Yen" value="JPY"></option>
+<option data-content="<img src='flags/Jordan.png'> Jordanian Dinar" value="JOD"></option>
+<option data-content="<img src='flags/Kazakhstan.png'> Kazakhstan Tenge" value="KZT"></option>
+<option data-content="<img src='flags/Kenya.png'> Kenyan Shilling" value="KES"></option>
+<option data-content="<img src='flags/South_Korea.png'> Korean Won" value="KRW"></option>
+<option data-content="<img src='flags/Kuwait.png'> Kuwaiti Dinar" value="KWD"></option>
+<option data-content="<img src='flags/Laos.png'> Lao Kip" value="LAK"></option>
+<option data-content="<img src='flags/Latvia.png'> Latvian Lat" value="LVL"></option>
+<option data-content="<img src='flags/Lebanon.png'> Lebanese Pound" value="LBP"></option>
+<option data-content="<img src='flags/Lesotho.png'> Lesotho Loti" value="LSL"></option>
+<option data-content="<img src='flags/Liberia.png'> Liberian Dollar" value="LRD"></option>
+<option data-content="<img src='flags/Libya.png'> Libyan Dinar" value="LYD"></option>
+<option data-content="<img src='flags/Lithuania.png'> Lithuanian Lita" value="LTL"></option>
+<option data-content="<img src='flags/Macao.png'> Macau Pataca" value="MOP"></option>
+<option data-content="<img src='flags/Macedonia.png'> Macedonian Denar" value="MKD"></option>
+<option data-content="<img src='flags/Madagascar.png'> Malagasy Franc" value="MGF"></option>
+<option data-content="<img src='flags/Malawi.png'> Malawi Kwacha" value="MWK"></option>
+<option data-content="<img src='flags/Malaysia.png'> Malaysian Ringgit" value="MYR"></option>
+<option data-content="<img src='flags/Maldives.png'> Maldives Rufiyaa" value="MVR"></option>
+<option data-content="<img src='flags/Malta.png'> Maltese Lira" value="MTL"></option>
+<option data-content="<img src='flags/Mauritania.png'> Mauritania Ougulya" value="MRO"></option>
+<option data-content="<img src='flags/Mauritius.png'> Mauritius Rupee" value="MUR"></option>
+<option data-content="<img src='flags/Mexico.png'> Mexican Peso" value="MXN"></option>
+<option data-content="<img src='flags/Moldova.png'> Moldovan Leu" value="MDL"></option>
+<option data-content="<img src='flags/Mongolia.png'> Mongolian Tugrik" value="MNT"></option>
+<option data-content="<img src='flags/Morocco.png'> Moroccan Dirham" value="MAD"></option>
+<option data-content="<img src='flags/Mozambique.png'> Mozambique Metical" value="MZM"></option>
+<option data-content="<img src='flags/Myanmar.png'> Myanmar Kyat" value="MMK"></option>
+<option data-content="<img src='flags/Namibia.png'> Namibian Dollar" value="NAD"></option>
+<option data-content="<img src='flags/Nepal.png'> Nepalese Rupee" value="NPR"></option>
+<option data-content="<img src='flags/Netherlands_Antilles.png'> Neth Antilles Guilder" value="ANG"></option>
+<option data-content="<img src='flags/New_Zealand.png'> New Zealand Dollar" value="NZD"></option>
+<option data-content="<img src='flags/Nicaragua.png'> Nicaragua Cordoba" value="NIO"></option>
+<option data-content="<img src='flags/Nigeria.png'> Nigerian Naira" value="NGN"></option>
+<option data-content="<img src='flags/North_Korea.png'> North Korean Won" value="KPW"></option>
+<option data-content="<img src='flags/Norway.png'> Norwegian Krone" value="NOK"></option>
+<option data-content="<img src='flags/Oman.png'> Omani Rial" value="OMR"></option>
+<option data-content="<img src='flags/'>Pacific Franc" value="XPF"></option>
+<option data-content="<img src='flags/Pakistan.png'> Pakistani Rupee" value="PKR"></option>
+<option data-content="<img src='flags/'>Palladium Ounces" value="XPD"></option>
+<option data-content="<img src='flags/Panama.png'> Panama Balboa" value="PAB"></option>
+<option data-content="<img src='flags/Papua_New_Guinea.png'> Papua New Guinea Kina" value="PGK"></option>
+<option data-content="<img src='flags/Paraguay.png'> Paraguayan Guarani" value="PYG"></option>
+<option data-content="<img src='flags/Peru.png'> Peruvian Nuevo Sol" value="PEN"></option>
+<option data-content="<img src='flags/Philippines.png'> Philippine Peso" value="PHP"></option>
+<option data-content="<img src='flags/'>Platinum Ounces" value="XPT"></option>
+<option data-content="<img src='flags/Poland.png'> Polish Zloty" value="PLN"></option>
+<option data-content="<img src='flags/Qatar.png'> Qatar Rial" value="QAR"></option>
+<option data-content="<img src='flags/Romania.png'> Romanian Leu" value="ROL"></option>
+<option data-content="<img src='flags/Russian_Federation.png'> Russian Rouble" value="RUB"></option>
+<option data-content="<img src='flags/Samoa.png'> Samoa Tala" value="WST"></option>
+<option data-content="<img src='flags/Sao_Tome_and_Principe.png'> Sao Tome Dobra" value="STD"></option>
+<option data-content="<img src='flags/Saudi_Arabia.png'> Saudi Arabian Riyal" value="SAR"></option>
+<option data-content="<img src='flags/Seychelles.png'> Seychelles Rupee" value="SCR"></option>
+<option data-content="<img src='flags/Sierra_Leone.png'> Sierra Leone Leone" value="SLL"></option>
+<option data-content="<img src='flags/'>Silver Ounces" value="XAG"></option>
+<option data-content="<img src='flags/Singapore.png'> Singapore Dollar" value="SGD"></option>
+<option data-content="<img src='flags/Slovakia.png'> Slovak Koruna" value="SKK"></option>
+<option data-content="<img src='flags/Slovenia.png'> Slovenian Tolar" value="SIT"></option>
+<option data-content="<img src='flags/Soloman_Islands.png'> Solomon Islands Dollar" value="SBD"></option>
+<option data-content="<img src='flags/Somalia.png'> Somali Shilling" value="SOS"></option>
+<option data-content="<img src='flags/South_Africa.png'> South African Rand" value="ZAR"></option>
+<option data-content="<img src='flags/Sri_Lanka.png'> Sri Lanka Rupee" value="LKR"></option>
+<option data-content="<img src='flags/'>St Helena Pound" value="SHP"></option>
+<option data-content="<img src='flags/Sudan.png'> Sudanese Dinar" value="SDD"></option>
+<option data-content="<img src='flags/Suriname.png'> Surinam Guilder" value="SRG"></option>
+<option data-content="<img src='flags/Swaziland.png'> Swaziland Lilageni" value="SZL"></option>
+<option data-content="<img src='flags/Sweden.png'> Swedish Krona" value="SEK"></option>
+<option data-content="<img src='flags/Turkey.png'> Turkey Lira" value="TRY"></option>
+<option data-content="<img src='flags/Switzerland.png'> Swiss Franc" value="CHF"></option>
+<option data-content="<img src='flags/Syria.png'> Syrian Pound" value="SYP"></option>
+<option data-content="<img src='flags/Taiwan.png'> Taiwan Dollar" value="TWD"></option>
+<option data-content="<img src='flags/Tanzania.png'> Tanzanian Shilling" value="TZS"></option>
+<option data-content="<img src='flags/Thailand.png'> Thai Baht" value="THB"></option>
+<option data-content="<img src='flags/Tonga.png'> Tonga Pa'anga" value="TOP"></option>
+<option data-content="<img src='flags/Trinidad_and_Tobago.png'> Trinidad&amp;Tobago Dollar" value="TTD"></option>
+<option data-content="<img src='flags/Tunisia.png'> Tunisian Dinar" value="TND"></option>
+<option data-content="<img src='flags/Turkey.png'> Turkish Lira" value="TRL"></option>
+<option data-content="<img src='flags/United_States_of_America.png'> U.S. Dollar" value="USD"></option>
+<option data-content="<img src='flags/UAE.png'> UAE Dirham" value="AED"></option>
+<option data-content="<img src='flags/Uganda.png'> Ugandan Shilling" value="UGX"></option>
+<option data-content="<img src='flags/Ukraine.png'> Ukraine Hryvnia" value="UAH"></option>
+<option data-content="<img src='flags/Uruguay.png'> Uruguayan New Peso" value="UYU"></option>
+<option data-content="<img src='flags/Vanuatu.png'> Vanuatu Vatu" value="VUV"></option>
+<option data-content="<img src='flags/Venezuela.png'> Venezuelan Bolivar" value="VEB"></option>
+<option data-content="<img src='flags/Vietnam.png'> Vietnam Dong" value="VND"></option>
+<option data-content="<img src='flags/Yemen.png'> Yemen Riyal" value="YER"></option>
+<option data-content="<img src='flags/'>Yugoslav Dinar" value="YUM"></option>
+<option data-content="<img src='flags/Zambia.png'> Zambian Kwacha" value="ZMK"></option>
+<option data-content="<img src='flags/Zimbabwe.png'> Zimbabwe Dollar" value="ZWD"></option>
+
+    </select>
+	<button type="submit" class="btn btn-lg btn-primary" id="currencySubmit">Submit</button>
+	<button type="reset" class="btn btn-lg btn-danger">Clear</button>
+	
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	
+	<script>
+	    $('.selectpicker').selectpicker({
+		    size: 6
+		});
+        </script>
+  <script>
+      $("select.selectpicker").focus(function(){
+          $(this).next(".bootstrap-select").find('.selectpicker').focus();
+      });
+  </script>
+  <script>
+  var $form = $("#currencyForm");
+
+      $("#currencySubmit").click(function(event){
+          if($form[0].checkValidity()) {
+              event.preventDefault();
+              var    url = $form.attr( 'action' );
+              var posting = $.post( url, $form.serialize());
+              $('#results').removeAttr('class role');
+              $('#results').html("<center><img src='images/loading.gif'></center>");
+              posting.done(function( data ) {
+                  $('#results').attr({class:"alert alert-success", role:"alert"});
+                  $('#results').html(data.content);
+              });
+          }
+          else {
+              console.log("invalid form");
+          }
+      });
+  </script>
+  </body>
+</html>
